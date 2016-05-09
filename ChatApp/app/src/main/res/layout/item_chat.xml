@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="vm"
+            type="com.shashank.chatapp.Message"/>
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp">
+
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                app:imageUrl="@{vm.imageUrl}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgUser"
+                android:layout_alignBottom="@+id/imgUser"
+                android:text="@{vm.name}"/>
+
+            <TextView
+                android:layout_below="@+id/imgUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@{vm.body}"/>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="vm"
+            type="com.shashank.chatapp.ChatWindowViewModel"/>
+    </data>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.shashank.chatapp.MainActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/rvData"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"/>
+
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="@{vm.isLoading}"
+            android:layout_centerInParent="true"/>
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.isError}"
+            android:textAlignment="center"
+            android:text="Error Occurred"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+</layout>
